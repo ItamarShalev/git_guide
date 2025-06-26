@@ -3,6 +3,18 @@ import toml
 import yaml
 import xml.etree.ElementTree as ET
 
+"""
+CRLF
+\r\n
+
+LF
+\n
+
+CR
+\r
+
+"""
+
 def read_toml(path):
     return toml.load(path)
 
@@ -18,7 +30,7 @@ def read_xml(path):
     tree = ET.parse(path)
     root = tree.getroot()
     def parse_value(text):
-        if res := text.strip().lower() in ('true', 'false'):
+        if res := text in ('true', 'false'):
             return res == 'true'
         try:
             return int(text)
@@ -26,7 +38,7 @@ def read_xml(path):
             return text
 
     def xml_to_dict(elem):
-        d = {}
+        d = dict()
         for child in elem:
             if child.tag == 'items':
                 d['items'] = [parse_value(item.text) for item in child.findall('item')]

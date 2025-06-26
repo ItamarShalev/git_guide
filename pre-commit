@@ -1,0 +1,8 @@
+#!/bin/sh
+
+pytest read_configs.py
+result=$?
+if [ $result -ne 0 ]; then
+	echo "read_configs.py test failed. Commit aborted."
+	exit 1
+fi
