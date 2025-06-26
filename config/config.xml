@@ -1,0 +1,20 @@
+<settings>
+  <name>example</name>
+  <version>1</version>
+  <enabled>true</enabled>
+  <items>
+    <item>a</item>
+    <item>b</item>
+    <item>c</item>
+  </items>
+  <sub>
+    <foo>bar</foo>
+    <number>42</number>
+  </sub>
+  <more>
+    <add>
+      <description>additional setting</description>
+      <active>true</active>
+    </add>
+  </more>
+</settings>

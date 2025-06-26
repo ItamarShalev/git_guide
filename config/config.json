@@ -1,0 +1,18 @@
+{
+  "settings": {
+    "name": "example",
+    "version": 1,
+    "enabled": true,
+    "items": ["a", "b", "c"],
+    "sub": {
+      "foo": "bar",
+      "number": 42
+    },
+    "more": {
+      "add": {
+        "description": "additional setting",
+        "active": true
+      }
+    }
+  }
+}

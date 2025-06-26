@@ -1,0 +1,13 @@
+[settings]
+name = "example"
+version = 1
+enabled = true
+items = ["a", "b", "c"]
+
+[settings.sub]
+foo = "bar"
+number = 42
+
+[settings.more.add]
+description = "additional setting"
+active = true
