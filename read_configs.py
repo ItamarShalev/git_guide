@@ -18,10 +18,8 @@ def read_xml(path):
     tree = ET.parse(path)
     root = tree.getroot()
     def parse_value(text):
-        if text == "true":
-            return True
-        if text == "false":
-            return False
+        if res := text.strip().lower() in ('true', 'false'):
+            return res == 'true'
         try:
             return int(text)
         except (ValueError, TypeError):
