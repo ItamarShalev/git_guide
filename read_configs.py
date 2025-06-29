@@ -30,8 +30,10 @@ def read_xml(path):
     tree = ET.parse(path)
     root = tree.getroot()
     def parse_value(text):
-        if res := text in ('true', 'false'):
-            return res == 'true'
+        if text == "true":
+            return True
+        if text == "false":
+            return False
         try:
             return int(text)
         except (ValueError, TypeError):
