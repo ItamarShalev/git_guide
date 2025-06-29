@@ -4,18 +4,6 @@ import xml.etree.ElementTree as ET
 import toml
 import yaml
 
-"""
-CRLF
-\r\n
-
-LF
-\n
-
-CR
-\r
-
-"""
-
 def read_toml(path):
     return toml.load(path)
 
