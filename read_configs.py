@@ -4,6 +4,8 @@ import xml.etree.ElementTree as ET
 import toml
 import yaml
 
+# This script reads configuration files in different formats (TOML, JSON, YAML, XML)
+
 def read_toml(path):
     return toml.load(path)
 

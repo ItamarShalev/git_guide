@@ -177,4 +177,25 @@ LF
 ```sh
 # Fix some comment in the last history
 git rebase -i HEAD~10 # Then select edit the commit you want to fix
+
+# Change the last commit (Without create a new commit)
+git commit --amend
+
+# Find a bug when you know the bad commit and a good commit
+git bisect start <bad_commit> <good_commit>
+
+# When you want to take specific commit from another branch
+git cherry-pick <commit_hash>
+
+# When you want to revert a commit
+git revert <commit_hash>
+
+# When you want to check who wrote and when
+git blame <file> # Or prefered to use some extension in your IDE
+
+# When you want to push from current branch to a different remote branch
+git push origin HEAD:<remote_branch_name>
+
+# Fix the pull request
+git push origin HEAD:<remote_branch_name> --force
 ```
