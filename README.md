@@ -170,3 +170,11 @@ xml
 CRLF
 CR
 LF
+```
+
+# More usueful commands
+
+```sh
+# Fix some comment in the last history
+git rebase -i HEAD~10 # Then select edit the commit you want to fix
+```
