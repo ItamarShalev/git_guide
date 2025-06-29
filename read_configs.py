@@ -1,7 +1,8 @@
 import json
+import xml.etree.ElementTree as ET
+
 import toml
 import yaml
-import xml.etree.ElementTree as ET
 
 """
 CRLF
@@ -53,12 +54,6 @@ def read_xml(path):
 
 def main():
     base = "config/"
-    files = [
-        ("TOML", read_toml, base + "config.toml"),
-        ("JSON", read_json, base + "config.json"),
-        ("YAML", read_yaml, base + "config.yaml"),
-        ("XML", read_xml, base + "config.xml"),
-    ]
     files_values = {
         "TOML": read_toml(base + "config.toml"),
         "JSON": read_json(base + "config.json"),

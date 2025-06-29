@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v4
+        - name: Set up Python 3.13
+          uses: actions/setup-python@v5.0.0
+          with:
+            python-version: "3.13"
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            python -m pip install -r requirements.txt
+        - name: Analysing the code with ruff
+          run: python -m ruff check
+
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v4.1.1
+
+        - name: Set up Python 3.13
+          uses: actions/setup-python@v5.0.0
+          with:
+            python-version: "3.13"
+
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            python -m pip install -r requirements.txt
+      
+        - name: Run pytest
+          run: python -m pytest read_configs.py
